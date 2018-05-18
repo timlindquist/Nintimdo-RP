@@ -148,9 +148,6 @@ void loop() {
       Joystick.button(8,0);
       }
     if(digitalRead(7)==LOW){  
-      while(digitalRead(7)==LOW){ //Test to see if this debounces
-        
-        }
       Joystick.button(9,1);
       }
     else{
@@ -158,6 +155,11 @@ void loop() {
       }
     if(digitalRead(5)==LOW){      //select
         while(digitalRead(5)==LOW){            //hotkey hold
+          if(digitalRead(22)==LOW){             //desktop enviroment
+            Keyboard.press(KEY_G);
+            Keyboard.release(KEY_G);
+            
+          }
           if(digitalRead(2)==LOW){    //left=brightness lower
             if(counter%8==0){
               display_lvl(-1);
@@ -202,25 +204,25 @@ void loop() {
       Joystick.button(12,0);
       }
     if(digitalRead(2)==LOW){   
-      Joystick.button(11,1);
+      //Joystick.button(11,1);
       if(counter%8==0){
       volume_lvl(-1);
       timeout=0;
       }
     }
     else{
-      Joystick.button(11,0);
+      //Joystick.button(11,0);
       left=LOW;
       }
     if(digitalRead(25)==LOW){   
-      Joystick.button(14,1);
+      //Joystick.button(14,1);
       if(counter%8==0){
       volume_lvl(1);
       timeout=0;
       }
     }
     else{
-      Joystick.button(14,0);
+      //Joystick.button(14,0);
       }
     if(digitalRead(22)==LOW){ //home=press start and select  
       while(digitalRead(22)==LOW){
