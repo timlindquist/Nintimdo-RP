@@ -1,5 +1,5 @@
 /** Author: Tim Lindquist
- *  Rev: 2.2
+ *  Rev: 2.3
  *
  *  NOTES: PID fan_speed controller is implemented but not used/tested (commented out in loop()). Default is fan will run at a continuous speed after boot.
  */
@@ -142,13 +142,13 @@ void buttonsPressed(){
 	(digitalRead(B))?Joystick.button(2,0):Joystick.button(2,1);
 	(digitalRead(X_BUTTON))?Joystick.button(3,0):Joystick.button(3,1);
 	(digitalRead(Y_BUTTON))?Joystick.button(4,0):Joystick.button(4,1);
-    (digitalRead(UP))?Joystick.button(5,0):Joystick.button(5,1);
-    (digitalRead(DOWN))?Joystick.button(6,0):Joystick.button(6,1);
+  (digitalRead(UP))?Joystick.button(5,0):Joystick.button(5,1);
+  (digitalRead(DOWN))?Joystick.button(6,0):Joystick.button(6,1);
 	(digitalRead(RIGHT_BUTTON))?Joystick.button(7,0):Joystick.button(7,1);
-    (digitalRead(LEFT_BUTTON))?Joystick.button(8,0):Joystick.button(8,1);
+  (digitalRead(LEFT_BUTTON))?Joystick.button(8,0):Joystick.button(8,1);
 	(digitalRead(START))?Joystick.button(9,0):Joystick.button(9,1);
 	(digitalRead(RIGHT_BUMPER))?Joystick.button(12,0):Joystick.button(12,1);
-    (digitalRead(LEFT_BUMPER))?Joystick.button(13,0):Joystick.button(13,1);
+  (digitalRead(LEFT_BUMPER))?Joystick.button(13,0):Joystick.button(13,1);
    
     if(!digitalRead(SELECT)){      				//select
         while(!digitalRead(SELECT)){            //hotkey hold
