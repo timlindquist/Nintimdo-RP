@@ -40,7 +40,7 @@
 #define BATTERY 43
 
 //GLOBAL VARIABLES
-int analogLV=512;		//idea analog center reading
+int analogLV=512;		//ideal analog center reading
 int analogLH=512;
 int analogRV=512;
 int analogRH=512;
@@ -116,22 +116,22 @@ void loop() {
 //--------------FUNCTIONS--------------------------------------------------------------------------------
 
 void analogSticks(){
-	 analogLV=-1*(-511+GAIN*(analogRead(38)-LVC)); //invert 
+	 analogLV=-1*(-511+GAIN*(analogRead(ANALOG_LEFT_VERT)-LVC)); //invert 
      if(analogLV>1023) analogLV=1023;
      else if(analogLV<0) analogLV=0;
      Joystick.Y(analogLV);
      
-	 analogLH=512+GAIN*(analogRead(39)-LHC);
+	 analogLH=512+GAIN*(analogRead(ANALOG_LEFT_HORZ)-LHC);
      if(analogLH>1023)analogLH=1023;
      else if(analogLH<0) analogLH=0;
      Joystick.X(analogLH);
      
-	 analogRV=512+GAIN*(analogRead(41)-RVC);
+	 analogRV=512+GAIN*(analogRead(ANALOG_RIGHT_VERT)-RVC);
      if(analogRV>1023)analogRV=1023;
      else if(analogRV<0)analogRV=0;
      Joystick.Z(analogRV);
      
-	 analogRH=512+GAIN*(analogRead(40)-RHC);
+	 analogRH=512+GAIN*(analogRead(ANALOG_RIGHT_HORZ)-RHC);
      if(analogRH>1023) analogRH=1023;
      else if(analogRH<0) analogRH=0;
      Joystick.Zrotate(analogRH);
