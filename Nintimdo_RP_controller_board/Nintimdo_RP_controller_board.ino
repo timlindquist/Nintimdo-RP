@@ -147,8 +147,11 @@ void buttonsPressed(){
 	(digitalRead(RIGHT_BUTTON))?Joystick.button(7,0):Joystick.button(7,1);
   (digitalRead(LEFT_BUTTON))?Joystick.button(8,0):Joystick.button(8,1);
 	(digitalRead(START))?Joystick.button(9,0):Joystick.button(9,1);
-	(digitalRead(RIGHT_BUMPER))?Joystick.button(12,0):Joystick.button(12,1);
+	(digitalRead(RIGHT_BUMPER))?Joystick.button(14,0):Joystick.button(14,1);
   (digitalRead(LEFT_BUMPER))?Joystick.button(13,0):Joystick.button(13,1);
+  //Comment out next 2 commands if you dont want the volume/brightness buttons as input buttons too
+ //(digitalRead(LEFT_TRIGGER))?Joystick.button(12,0):Joystick.button(12,1);
+  //(digitalRead(RIGHT_TRIGGER))?Joystick.button(15,0):Joystick.button(15,1);
    
     if(!digitalRead(SELECT)){      				//select
         while(!digitalRead(SELECT)){            //hotkey hold
